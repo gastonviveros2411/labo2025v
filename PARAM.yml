@@ -1,0 +1,174 @@
+semilla_primigenia: 129457.0
+experimento: 9500.0
+semillas_semillerio:
+- 102191.0
+- 200177.0
+- 300443.0
+- 400651.0
+- 500723.0
+dataset: gerencial_competencia_2025.csv.gz
+trainingstrategy:
+  validate: 202107.0
+  training:
+  - 202106.0
+  - 202105.0
+  - 202104.0
+  - 202103.0
+  - 202102.0
+  - 202101.0
+  - 202012.0
+  - 202011.0
+  - 202010.0
+  - 202009.0
+  - 202008.0
+  - 202007.0
+  - 202006.0
+  - 202005.0
+  training_pct: 1.0
+  positivos:
+  - BAJA+1
+  - BAJA+2
+  final_train:
+  - 202107.0
+  - 202106.0
+  - 202105.0
+  - 202104.0
+  - 202103.0
+  - 202102.0
+  - 202101.0
+  - 202012.0
+  - 202011.0
+  - 202010.0
+  - 202009.0
+  - 202008.0
+  - 202007.0
+  - 202006.0
+  - 202005.0
+  future: 202109.0
+hipeparametertuning:
+  num_interations: 50.0
+  hs:
+    pars:
+      num_leaves:
+        id: num_leaves
+        type: integer
+        len: 1
+        lower: 8
+        upper: 256
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      min_data_in_leaf:
+        id: min_data_in_leaf
+        type: integer
+        len: 1
+        lower: 8
+        upper: 4096
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      feature_fraction:
+        id: feature_fraction
+        type: numeric
+        len: 1
+        lower: 0.3
+        upper: 0.9
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      bagging_fraction:
+        id: bagging_fraction
+        type: numeric
+        len: 1
+        lower: 0.5
+        upper: 1.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      bagging_freq:
+        id: bagging_freq
+        type: integer
+        len: 1
+        lower: 1
+        upper: 5
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+    forbidden: ~
+lgbm:
+  param_fijos:
+    objective: binary
+    metric: auc
+    first_metric_only: yes
+    boost_from_average: yes
+    feature_pre_filter: no
+    verbosity: -100.0
+    force_row_wise: yes
+    seed: 129457.0
+    max_bin: 31.0
+    learning_rate: 0.01
+    num_iterations: 9999.0
+    early_stopping_rounds: 1000.0
+out:
+  lgbm:
+    mejores_hiperparametros:
+      num_leaves: 231
+      min_data_in_leaf: 19
+      feature_fraction: 0.83072
+      bagging_fraction: 0.8602651
+      bagging_freq: 4
+      num_iterations: 1009
+kaggle:
+  competencia: labo-i-2025-virtual-gerencial
+  cortes:
+  - 800.0
+  - 825.0
+  - 850.0
+  - 875.0
+  - 900.0
+  - 925.0
+  - 950.0
+  - 975.0
+  - 1000.0
+  - 1025.0
+  - 1050.0
+  - 1075.0
+  - 1100.0
+  - 1125.0
+  - 1150.0
+  - 1175.0
+  - 1200.0
+  - 1225.0
+  - 1250.0
+  - 1275.0
+  - 1300.0
