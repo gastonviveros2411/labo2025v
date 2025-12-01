@@ -1,4 +1,4 @@
-# 🏆 Modelo Final - Experimento 9500
+#  Modelo Final - Experimento 9500
 
 ## Resultado
 
